@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BINUS Travel : Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+    
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+    
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+    
+        .active {
+          background-color: #717171;
+        }
+    
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+    
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+    
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo-travel.png" alt="logoNavBar">
+        </div>
+    
+        <nav>
+            <ul class="nav-links">
+                <li><a class="nav-link" href="forum.html">Forum</a></li>
+                <li><a class="nav-link" href="rating.html">Rating</a></li>
+                <li><a class="nav-link" href="#" id="forFeedback">Feedback</a></li>
+            </ul>
+        </nav>
+
+        <div class="loginRegis">
+            <a class="loginPage" href="#" id="forLogin">Login</a>
+            <a class="regisPage" href="#" id="forRegist">Registration</a>
+        </div>
+    </header>
+
+    <div class="menuPopup" id="menuPopup">
+        <img onclick="menuPopup()" src="rightkey.svg" alt="right key">
+    </div>
+
+    <div class="menuyangdiPop" id="menuyangdiPop">
+        <div class="steam">
+            <a href="https://twitter.com/"><img src="twitter.png" alt="steam"></a>
+        </div>
+
+        <div class="facebook">
+            <a href="https://www.facebook.com/"><img src="facebooklogo.png" alt="facebook"></a>
+        </div>
+        
+        <div class="discord">
+            <a href="https://www.instagram.com/"><img src="instagram.png" alt="discord"></a>
+        </div>
+        <img onclick="buttonClickedMenuPop()" class="closeIconMenuPop" src="closeIcon.png" alt="closeIcon">
+    </div>
+
+    <main id="feedbackPage">
+        <div class="feedback-container">
+            
+            <h1>Feedback</h1>
+            <p>Please provide your feedback below:</p>
+
+            <form action="" class="formFeedback" id="formFeedback">
+                <label>How do you rate your overall experience?</label>
+
+                <div class="radio">
+                    <label for="badExp">
+                    <input type="radio" name="experience" value="BadExperience" id="badExp">
+                    Bad
+                    </label>
+
+                    <label for="averageExp">
+                    <input type="radio" name="experience" value="AverageExperience"  id="averageExp" >
+                    Average
+                    </label>
+
+                    <label for="goodExp">
+                    <input type="radio" name="experience" value="GoodExperience" id="goodExp" >
+                    Good
+                    </label>
+                </div>
+
+                <div class="inputFormFeedback">
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="inputAttribFeedback">
+                    <label for="fullName">Your Name: </label><input type="text" id="fullNameFeedback">
+                </div>
+    
+                <div class="inputAttribFeedback">
+                    <label for="email">Email: </label><input type="text" id="emailFeedback">
+                </div>
+    
+                <p id="errorMessageFeedback"></p>
+    
+                <button type="button" id="btnConfirmFeedback">Submit</button>
+            </form>
+        </div>
+
+        <div class="slideshow-container">
+        
+            <div class="mySlides fade">
+              <img src="gallery1.jpg" style="width:100%">
+              <div class="text">Switzerland</div>
+            </div>
+            <div class="mySlides fade">
+              <img src="gallery2.jpg" style="width:100%">
+              <div class="text">Africa</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gallery3.jpg" style="width:100%">
+                <div class="text">Sweden</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gallery4.jpg" style="width:100%">
+                <div class="text">Thailand</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gallery5.jpg" style="width:100%">
+                <div class="text">Indonesia</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gallery6.jpg" style="width:100%">
+                <div class="text">Indonesia</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="gallery7.jpg" style="width:100%">
+                <div class="text">Indonesia</div>
+            </div>
+        
+        </div>
+
+        <div class="sponsor">
+            <img src="sponsor.jpg" alt="sponsor">
+        </div>
+
+    </main>
+
+    <main class="login" id="loginPage" style="display: none">
+        <div class="regist-container">
+            <h1>Login</h1>
+            <hr class="garisRegis">
+
+            <form action="" class="formLogin" id="formLogin">
+
+                <div class="inputAttrib">
+                    <input type="text" placeholder="Username" id="usernameLogin">
+                </div>
+
+                <div class="inputAttrib">
+                    <input type="password" placeholder="Password" id="passwordLogin">
+                </div>
+    
+                <p id="errorMessageLogin"></p>
+    
+                <button type="button" id="btnLogin">Confirm</button>
+            </form>
+        </div>
+    </main>
+    
+    <main class="regis" id="registPage" style="display: none">
+        <div class="regist-container">
+            <h1>Registration</h1>
+            <hr class="garisRegis">
+
+            <form action="" class="formRegistration" id="formRegistration">
+                
+                <div class="inputAttrib">
+                    <input type="text" placeholder="Full Name" id="fullName">
+                </div>
+
+                <div class="inputAttrib">
+                    <input type="text" placeholder="Username" id="username">
+                </div>
+
+                <div class="inputAttrib">
+                    <input type="password" placeholder="Password" id="password">
+                </div>
+
+                <div class="radioButton">
+                    <div class="inputAttribRadio">
+                        <input type="radio" id="radioMale" name="gender"><label for="radioMale">Male</label>
+                    </div>
+        
+                    <div class="inputAttribRadio">
+                        <input type="radio" id="radioFemale" name="gender"><label for="radioFemale">Female</label>
+                    </div>
+                </div>
+
+                <div class="tanggalLahir">
+                    <label for="doby">Day of Birth:</label>
+                    <input type="date" id="dob">
+                </div>
+    
+                <div class="inputAttrib">
+                    <input type="text" placeholder="Email" id="email">
+                </div>
+    
+                <p id="errorMessage"></p>
+    
+                <button type="button" id="btnConfirm">Confirm</button>
+                <button type="reset" id="btnReset">Reset</button>
+            </form>
+        </div>
+    </main>
+
+    <div class="footer1" id="footer1">
+        <div class="contact">
+            <h1>Subscription</h1>
+            <form action="" class="formContact" id="formContact">
+                
+                <div class="inputAttrib">
+                    <label for="fullName">Your Name: </label><input type="text" id="fullNameContact">
+                </div>
+    
+                <div class="inputAttrib">
+                    <label for="email">Email: </label><input type="text" id="emailContact">
+                </div>
+
+                <div class="inputAttribAgreement">
+                    <input type="checkbox" id="agreement"><label for="agreement">I want to keep informed about BINUS Travel offering</label>
+                </div>
+
+                <p id="errorMessageContact"></p>
+    
+                <button type="button" id="btnConfirmContact">Submit</button>
+            </form>
+        </div>
+
+        <div class="logofooter">
+            <img src="logo-travel.png" alt="logo">
+        </div>
+    </div>
+        
+    <footer id="footer">
+        <hr>
+        <div class="copyright">
+            <p>Copyright &copy; 2020 BINUS Travel</p>
+        </div>
+    </footer>
+    
+
+    <script>
+        // JAVASCRIPT FEEDBACK PAGE
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          slides[slideIndex-1].style.display = "block";  
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+        
+        let errorFeedback = document.getElementById("errorMessageFeedback");
+        document.getElementById("btnConfirmFeedback").addEventListener("click", validasiFeedback);
+
+        document.getElementById("badExp").addEventListener("click",radio1);
+        document.getElementById("averageExp").addEventListener("click",radio2);
+        document.getElementById("goodExp").addEventListener("click",radio3);
+
+        function validasiFeedback(){
+          if(checkExperience()==false){
+            return;
+          }else if(checkComment()==false){
+            return;
+          }else if(checkNameFeedback()==false){
+            return;
+          }else if(checkEmailFeedback()==false){
+            return;
+          }else{
+            document.getElementById("formFeedback").submit();
+            errorFeedback.innerHTML = '';
+            alert(
+                'Overall Experience: ' + expRadio + "\n" +
+                'Comment: ' + document.getElementById("comments").value + "\n"+
+                'Name: ' + document.getElementById("fullNameFeedback").value +"\n" +
+                'Email: ' + document.getElementById("emailFeedback").value + "\n"
+            );
+          }
+        }
+
+        function checkNameFeedback(){
+          let name = document.getElementById("fullNameFeedback").value;
+
+          if(name.length == 0){
+              errorFeedback.innerHTML = "Fullname must be filled";
+              return false;
+          }
+
+          else if(checkAlphabetFeedback(name)==false){
+              errorFeedback.innerHTML = "Fullname must be alphabet";
+              return false;
+          }
+
+          for(let i = 0; i < name.length; i++){
+            if(name.charAt(i)==containNumberFeedback(name)){
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function checkAlphabetFeedback(name){
+          for(let i = 0; i<name.length; i++){
+              let char = +name.charCodeAt(i);
+
+              if(char >= 65 && char <= 90 || char >= 97 && char <= 122){
+                return true;
+              }else if(char >= 48 && char <= 64){
+                return false;
+              }else{
+                return false;
+              }
+          }
+        }
+
+        function containNumberFeedback(name){
+          for(let i = 0; i < name.length; i++){
+            let char = +name.charCodeAt(i);
+
+            if(char >= 48 && char <= 64){
+              return true;
+            }
+          }
+        }
+
+        function checkEmailFeedback() {
+          let email = document.getElementById("emailFeedback").value;
+
+          if(email.length == 0){
+            errorFeedback.innerHTML = "Email must be filled";
+            return false;
+          }
+
+          if (!IsValidEmailFeedback(email)) {
+              errorFeedback.innerHTML = "Invalid email address (Ex: asd1@gmail.com)";
+              return false;
+          }
+          return true;
+        }
+
+        function IsValidEmailFeedback(email) {
+          //Check minimum valid length of an Email.
+          if (email.length <= 2) {
+              return false;
+          }
+          //If whether email has @ character.
+          if (email.indexOf("@") == -1) {
+              return false;
+          }
+
+          let parts = email.split("@");
+          let dot = parts[1].indexOf(".");
+          let len = parts[1].length;
+          let dotSplits = parts[1].split(".");
+          let dotCount = dotSplits.length - 1;
+
+
+          //Check whether Dot is present, and that too minimum 1 character after @.
+          if (dot == -1 || dot < 2 || dotCount > 2) {
+              return false;
+          }
+
+          //Check whether Dot is not the last character and dots are not repeated.
+          for (let i = 0; i < dotSplits.length; i++) {
+              if (dotSplits[i].length == 0) {
+                  return false;
+              }
+          }
+
+          return true;
+        };
+
+        function checkExperience(){
+          let bad = document.getElementById("badExp").checked;
+          let average = document.getElementById("averageExp").checked;
+          let good = document.getElementById("goodExp").checked;
+
+          if(bad == false && average == false && good == false){
+              errorFeedback.innerHTML = "Overall Experience must be chosen";
+              return false;
+          }
+
+          return true;
+        }
+
+        let expRadio = '';
+
+        function radio1(){
+            expRadio = "Bad Experience";
+        }
+        
+        function radio2(){
+            expRadio = "Average Experience";
+        }
+
+        function radio3(){
+            expRadio = "Good Experience";
+        }
+ 
+        function checkComment(){
+            let comment = document.getElementById("comments").value;
+
+            if(comment.length == 0){
+                errorFeedback.innerHTML = "Comment must be filled"; 
+                return false;
+                
+            }
+
+            return true;
+        }
+
+        document.getElementById("forLogin").addEventListener("click", showLogin);
+        document.getElementById("forRegist").addEventListener("click", showRegist);
+        document.getElementById("forFeedback").addEventListener("click", showFeedback);
+        
+
+        function showLogin(){
+            document.getElementById("loginPage").style.display = "";
+            document.getElementById("registPage").style.display = "none";
+            document.getElementById("feedbackPage").style.display = "none";
+            document.getElementById("footer").style.display = "none";
+            document.getElementById("footer1").style.display = "none";
+        }
+
+        function showRegist(){
+            document.getElementById("registPage").style.display = "";
+            document.getElementById("feedbackPage").style.display = "none";
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("footer").style.display = "none";
+            document.getElementById("footer1").style.display = "none";
+        }
+
+        function showFeedback(){
+            document.getElementById("registPage").style.display = "none";
+            document.getElementById("feedbackPage").style.display = "";
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("footer").style.display = "";
+            document.getElementById("footer1").style.display = "";
+        }
+
+    </script>
+
+    <script>
+        // JAVASCRIPT CONTACT FORM
+
+        let errorContact = document.getElementById("errorMessageContact");
+        document.getElementById("btnConfirmContact").addEventListener("click",validasiContact);
+
+        function validasiContact(){
+          if(checkNameContact()==false){
+            return;
+          }else if(checkEmailContact()==false){
+            return;
+          }else if(checkAgreement()==false){
+            return;
+          }else{
+            document.getElementById("formContact").submit();
+            errorContact.innerHTML = '';
+            alert(
+                'Name: ' + document.getElementById("fullNameContact").value +"\n" +
+                'Email: ' + document.getElementById("emailContact").value + "\n"
+            );
+          }
+        }
+
+        function checkNameContact(){
+          let name = document.getElementById("fullNameContact").value;
+
+          if(name.length == 0){
+              errorContact.innerHTML = "Fullname must be filled";
+              return false;
+          }
+
+          else if(checkAlphabetContact(name)==false){
+              errorContact.innerHTML = "Fullname must be alphabet";
+              return false;
+          }
+
+          for(let i = 0; i < name.length; i++){
+            if(name.charAt(i)==containNumberContact(name)){
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function checkAlphabetContact(name){
+          for(let i = 0; i<name.length; i++){
+              let char = +name.charCodeAt(i);
+
+              if(char >= 65 && char <= 90 || char >= 97 && char <= 122){
+                return true;
+              }else if(char >= 48 && char <= 64){
+                return false;
+              }else{
+                return false;
+              }
+          }
+        }
+
+        function containNumberContact(name){
+          for(let i = 0; i < name.length; i++){
+            let char = +name.charCodeAt(i);
+
+            if(char >= 48 && char <= 64){
+              return true;
+            }
+          }
+        }
+
+        function checkEmailContact() {
+          let email = document.getElementById("emailContact").value;
+
+          if(email.length == 0){
+            errorContact.innerHTML = "Email must be filled";
+            return false;
+          }
+
+          if (!IsValidEmailContact(email)) {
+              errorContact.innerHTML = "Invalid email address (Ex: asd1@gmail.com)";
+              return false;
+          }
+          return true;
+        }
+
+        function IsValidEmailContact(email) {
+          //Check minimum valid length of an Email.
+          if (email.length <= 2) {
+              return false;
+          }
+          //If whether email has @ character.
+          if (email.indexOf("@") == -1) {
+              return false;
+          }
+
+          let parts = email.split("@");
+          let dot = parts[1].indexOf(".");
+          let len = parts[1].length;
+          let dotSplits = parts[1].split(".");
+          let dotCount = dotSplits.length - 1;
+
+
+          //Check whether Dot is present, and that too minimum 1 character after @.
+          if (dot == -1 || dot < 2 || dotCount > 2) {
+              return false;
+          }
+
+          //Check whether Dot is not the last character and dots are not repeated.
+          for (let i = 0; i < dotSplits.length; i++) {
+              if (dotSplits[i].length == 0) {
+                  return false;
+              }
+          }
+
+          return true;
+        };
+
+        function checkAgreement(){
+            let agree = document.getElementById("agreement").checked;
+
+            if(!agree){
+                errorContact.innerHTML = "Agreement must be checked";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <script>
+    // JAVASCRIPT UNTUK REGISTER
+    let error = document.getElementById("errorMessage");
+        document.getElementById("btnConfirm").addEventListener("click", validasi);
+
+        document.getElementById("radioMale").addEventListener("click",radioMale);
+        document.getElementById("radioFemale").addEventListener("click",radioFemale);
+
+        function validasi(){
+          if(checkName()==false){
+            return;
+          }else if(checkUsername()==false){
+            return;
+          }else if(checkPassword()==false){
+            return;
+          }else if(checkGender()==false){
+            return;
+          }else if(checkdob()==false){
+            return;
+          }else if(checkEmail()==false){
+            return;
+          }else{
+            let formRegist = document.getElementById("formRegistration");
+            function handleFormRegist(eventRegist) { eventRegist.preventDefault(); } 
+            formRegist.addEventListener('submit', handleFormRegist);
+            error.innerHTML = '';
+            alert(
+                'Name: ' + document.getElementById("fullName").value + "\n" +
+                'Username: ' + document.getElementById("username").value + "\n"+
+                'Password: ' + document.getElementById("password").value +"\n" +
+                'Gender: ' + radioGender + "\n" +
+                'DOB: ' + document.getElementById("dob").value + '\n' +
+                'Email: ' + document.getElementById("email").value
+            );
+        
+            showLogin();
+          }
+        }
+
+
+        function checkName(){
+          let name = document.getElementById("fullName").value;
+
+          if(name.length == 0){
+              error.innerHTML = "Fullname must be filled";
+              return false;
+          }
+
+          else if(checkAlphabet(name)==false){
+              error.innerHTML = "Fullname must be alphabet";
+              return false;
+          }
+
+          for(let i = 0; i < name.length; i++){
+            if(name.charAt(i)==containNumber(name)){
+              return false;
+            }
+          }
+
+          return true;
+        }
+
+        function checkAlphabet(name){
+          for(let i = 0; i<name.length; i++){
+              let char = +name.charCodeAt(i);
+
+              if(char >= 65 && char <= 90 || char >= 97 && char <= 122){
+                return true;
+              }else if(char >= 48 && char <= 64){
+                return false;
+              }else{
+                return false;
+              }
+          }
+        }
+
+        function containNumber(name){
+          for(let i = 0; i < name.length; i++){
+            let char = +name.charCodeAt(i);
+
+            if(char >= 48 && char <= 64){
+              return true;
+            }
+          }
+        }
+
+        function checkEmail() {
+          let email = document.getElementById("email").value;
+
+          if(email.length == 0){
+            error.innerHTML = "Email must be filled";
+            return false;
+          }
+
+          if (!IsValidEmail(email)) {
+              error.innerHTML = "Invalid email address.";
+              return false;
+          }
+          return true;
+        }
+
+        function IsValidEmail(email) {
+          //Check minimum valid length of an Email.
+          if (email.length <= 2) {
+              return false;
+          }
+          //If whether email has @ character.
+          if (email.indexOf("@") == -1) {
+              return false;
+          }
+
+          let parts = email.split("@");
+          let dot = parts[1].indexOf(".");
+          let len = parts[1].length;
+          let dotSplits = parts[1].split(".");
+          let dotCount = dotSplits.length - 1;
+
+
+          //Check whether Dot is present, and that too minimum 1 character after @.
+          if (dot == -1 || dot < 2 || dotCount > 2) {
+              return false;
+          }
+
+          //Check whether Dot is not the last character and dots are not repeated.
+          for (let i = 0; i < dotSplits.length; i++) {
+              if (dotSplits[i].length == 0) {
+                  return false;
+              }
+          }
+
+          return true;
+        };
+
+        function checkUsername(){
+          let username = document.getElementById("username").value;
+
+          if(username.length == 0){
+            error.innerHTML = "Username must be filled";
+            return false;
+          }
+
+          if(username.length < 6){
+            error.innerHTML = "Username must be more than 6";
+            return false;
+          }
+
+          return true;
+        }
+
+        let angka = 0;
+        let huruf = 0;
+        function checkPassword(){
+          let password = document.getElementById("password").value;
+          angka = 0;
+          huruf = 0;
+
+          if(password.length == 0){
+            error.innerHTML = "Password must be filled";
+            return false;
+          }
+
+          checkAlphaNum(password);
+          if(angka == 0 || huruf == 0){
+            error.innerHTML = "Password must be alphanumeric";
+            return false;
+          }
+
+          return true;
+        }
+
+        function checkAlphaNum(password){
+          for(let i = 0; i < password.length; i++){
+            let character = +password.charCodeAt(i);
+
+            if(character >= 65 && character <= 90){
+              huruf++;
+            }
+
+            if(character >= 97 && character <= 122){
+              huruf++;
+            }
+
+            if(character >= 48 && character <= 71){
+              angka++
+            }
+          }
+        }
+
+        function checkGender(){
+          let male = document.getElementById("radioMale").checked;
+          let female = document.getElementById("radioFemale").checked;
+
+          if(male == false && female == false){
+              error.innerHTML = "Gender must be chosen";
+              return false;
+          }
+
+          return true;
+        }
+        
+        function checkdob(){
+            let dob = document.getElementById("dob").value;
+
+            if(dob === ""){
+                error.innerHTML = "Birth date must be filled";
+                return false;
+            }
+            return true;            
+        }
+
+        // UNTUK LOGIN
+        let errorLogin = document.getElementById("errorMessageLogin");
+        document.getElementById("btnLogin").addEventListener("click",validasiLogin);
+
+        function validasiLogin(){
+          if(checkUsernameLogin()==false){
+            return;
+          }else if(checkPasswordLogin()==false){
+            return;
+          }else{
+            // let formLogin = document.getElementById("formLogin");
+            // function handleFormLogin(eventLogin) { eventLogin.preventDefault(); } 
+            // formLogin.addEventListener('submit', handleFormLogin);
+            document.getElementById("formLogin").submit();
+            errorLogin.innerHTML = '';
+            alert(
+                'Username: ' + document.getElementById("usernameLogin").value + '\n'+
+                'Password: ' + document.getElementById("passwordLogin").value
+            );
+            
+            showFeedback();
+          }
+        }
+
+        function checkUsernameLogin(){
+          let username = document.getElementById("usernameLogin").value;
+
+          if(username.length == 0){
+            errorLogin.innerHTML = "Username must be filled";
+            return false;
+          }
+
+          if(document.getElementById("usernameLogin").value == document.getElementById("username").value){
+            return true;
+          }else{
+              errorLogin.innerHTML = "Username is false/not registered";
+              return false;
+          }
+          return true;
+        }
+
+        function checkPasswordLogin(){
+          let password = document.getElementById("passwordLogin").value;
+          
+          if(password.length == 0){
+            errorLogin.innerHTML = "Password must be filled";
+            return false;
+          }
+
+          if(document.getElementById("passwordLogin").value == document.getElementById("password").value){
+            return true;
+          }else{
+              errorLogin.innerHTML = "Password is false/not registered";
+              return false;
+          }
+
+          return true;
+
+        }
+
+        let radioGender = '';
+
+        function radioMale(){
+            radioGender = "Male";
+        }
+
+        function radioFemale(){
+            radioGender = "Female";
+        }
+    </script>
+
+    <script>
+        function menuPopup(){
+            document.getElementById("menuyangdiPop").style.display = "block";
+            document.getElementById("menuPopup").style.display = "none";
+        }
+
+        function buttonClickedMenuPop(){
+            document.getElementById("menuyangdiPop").style.display = "none";
+            document.getElementById("menuPopup").style.display = "";
+        }
+    </script>
+
+</body>
+</html>
